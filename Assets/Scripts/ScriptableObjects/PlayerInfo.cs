@@ -19,8 +19,5 @@ namespace Scripts.ScriptableObjects
         public GameObject DiceMaster, DiceEnemy, DiceAllie, DiceNeutral, DiceObjective;
 
         public int MasterNbDicesSpawn;
-
-        [Header("Spawnable")]
-        public GameObject[] Enemies;
     }
 }

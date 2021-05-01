@@ -29,7 +29,7 @@ namespace Scripts.Dice
             {
                 for (int i = 0; i < ConfigManager.S.Info.MasterNbDicesSpawn; i++)
                 {
-                    var go = Instantiate(ConfigManager.S.Info.DiceNeutral, transform.position, Quaternion.identity);
+                    var go = Instantiate(ConfigManager.S.Info.DiceEnemy, transform.position, Quaternion.identity);
                     var rb = go.GetComponent<Rigidbody>();
                     rb.AddForce((Vector3.up + Vector3.right * Random.Range(.5f, 1f) + Vector3.forward * Random.Range(.5f, 1f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
                     rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
