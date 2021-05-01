@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Config;
+﻿using Scripts.Config;
 using UnityEngine;
 
 namespace Scripts.Dice

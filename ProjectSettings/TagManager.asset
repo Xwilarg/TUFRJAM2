@@ -8,6 +8,7 @@ TagManager:
   - Dice
   - Floor
   - Spawn
+  - Ball
   layers:
   - Default
   - TransparentFX

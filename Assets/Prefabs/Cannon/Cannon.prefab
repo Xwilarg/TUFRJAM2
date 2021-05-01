@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 530597754629302919}
+  - component: {fileID: 1657049921}
+  - component: {fileID: 1657049922}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -32,6 +34,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657049921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871129267822194749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b6ffc0fa2627c448664994e7a336da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _goal: {fileID: 0}
+  _ball: {fileID: 0}
+--- !u!54 &1657049922
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871129267822194749}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 90
+  m_CollisionDetection: 0
 --- !u!1 &7243476337737285181
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +75,7 @@ GameObject:
   - component: {fileID: 8624807475692218514}
   - component: {fileID: 8946562749000902109}
   - component: {fileID: 28771349516761381}
+  - component: {fileID: 1462968626}
   m_Layer: 0
   m_Name: Base Cannon
   m_TagString: Untagged
@@ -114,6 +147,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1462968626
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7243476337737285181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8468599, y: 1.3706571, z: 1.4231926}
+  m_Center: {x: 0, y: -0.061889663, z: 0.7115963}
 --- !u!1 &7381830118633082043
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +171,7 @@ GameObject:
   - component: {fileID: 5782963985201595036}
   - component: {fileID: 8525889082566268863}
   - component: {fileID: 7384401817263349406}
+  - component: {fileID: 614151548}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -196,3 +243,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &614151548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381830118633082043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5854704, y: 1.5854702, z: 2.5057774}
+  m_Center: {x: -0.000000059604645, y: 0.00000023841858, z: 0.20416433}

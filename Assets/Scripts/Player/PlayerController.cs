@@ -1,4 +1,6 @@
-using Assets.Scripts.Config;
+using Scripts.Config;
+using Scripts.Enemy;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +25,11 @@ namespace Scripts.Player
 
         private void Start()
         {
+            foreach (var e in GameObject.FindGameObjectsWithTag("Enemy").Select(x => x.GetComponent<EnemyController>()))
+            {
+                e.Player = this;
+            }
+
             _rb = GetComponent<Rigidbody>();
             GameObject.FindGameObjectWithTag("Spawn").SetActive(false);
             _rb.AddForce(Vector3.down * 30f, ForceMode.Impulse);
@@ -30,11 +37,21 @@ namespace Scripts.Player
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (_canMove) return;
-
-            if (collision.collider.CompareTag("Floor"))
+            if (_canMove)
             {
-                _canMove = true;
+                if (collision.collider.CompareTag("Ball"))
+                {
+                    var dir = collision.collider.transform.position - transform.position;
+                    dir.y = Mathf.Abs(new Vector2(dir.x, dir.z).magnitude) / 2f;
+                    collision.collider.GetComponent<Rigidbody>().AddForce(dir * ConfigManager.S.Info.FeetForce, ForceMode.Impulse);
+                }
+            }
+            else
+            {
+                if (collision.collider.CompareTag("Floor"))
+                {
+                    _canMove = true;
+                }
             }
         }
 
@@ -67,8 +84,19 @@ namespace Scripts.Player
 
         public void TakeDamage()
         {
+            if (_health.Length == 0) return;
             _health[_healthIndex].color = Color.gray;
             _healthIndex++;
+        }
+
+        public bool GainHealth()
+        {
+            if (_health.Length == 0) return true;
+            if (_healthIndex == _health.Length - 1) return false;
+
+            _health[_healthIndex].color = Color.red;
+            _healthIndex--;
+            return true;
         }
     }
 }

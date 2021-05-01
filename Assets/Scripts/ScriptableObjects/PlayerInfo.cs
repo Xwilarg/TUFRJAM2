@@ -19,5 +19,15 @@ namespace Scripts.ScriptableObjects
         public GameObject DiceMaster, DiceEnemy, DiceAllie, DiceNeutral, DiceObjective;
 
         public int MasterNbDicesSpawn;
+
+        [Header("Mine")]
+        public float TimeBeforeExplosion;
+        public float ExplosionForce;
+
+        [Header("Canon")]
+        public float CanonForce;
+
+        [Header("Ball")]
+        public float FeetForce;
     }
 }

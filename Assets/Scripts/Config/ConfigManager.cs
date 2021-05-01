@@ -1,7 +1,7 @@
 ﻿using Scripts.ScriptableObjects;
 using UnityEngine;
 
-namespace Assets.Scripts.Config
+namespace Scripts.Config
 {
     public class ConfigManager : MonoBehaviour
     {
