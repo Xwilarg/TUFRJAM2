@@ -1,5 +1,4 @@
-﻿using Scripts.Config;
-using Scripts.Player;
+﻿using Scripts.Player;
 using UnityEngine;
 
 namespace Scripts.Enemy
@@ -14,6 +13,8 @@ namespace Scripts.Enemy
 
         private LineRenderer _ln;
 
+        public Rigidbody Rb;
+
         public void TakeDamage()
         {
             _health--;
@@ -26,6 +27,7 @@ namespace Scripts.Enemy
         private void Start()
         {
             _ln = GetComponentInChildren<LineRenderer>();
+            Rb = GetComponent<Rigidbody>();
             _ai = new EnemyShooter
             {
                 Enemy = this

@@ -51,9 +51,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 871129267822194749, guid: 0a8f82b1c531ee74dbee0d56eecaf9c8, type: 3}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 871129267822194749, guid: 0a8f82b1c531ee74dbee0d56eecaf9c8, type: 3}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 871129267822194749, guid: 0a8f82b1c531ee74dbee0d56eecaf9c8, type: 3}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 871129267822194749, guid: 0a8f82b1c531ee74dbee0d56eecaf9c8, type: 3}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 871129267822194749, guid: 0a8f82b1c531ee74dbee0d56eecaf9c8, type: 3}
+    - target: {fileID: 4954904187411779947, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+      propertyPath: _toSpawn.Array.data[5]
+      value: 
+      objectReference: {fileID: 871129267822194749, guid: 0a8f82b1c531ee74dbee0d56eecaf9c8, type: 3}
     - target: {fileID: 5710092053343311524, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
       propertyPath: m_Name
-      value: Dice Mystere
+      value: Objective
       objectReference: {fileID: 0}
     - target: {fileID: 6135420233068323563, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
       propertyPath: m_Materials.Array.data[0]
