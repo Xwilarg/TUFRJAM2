@@ -7,6 +7,9 @@ namespace Scripts.Dice.DiceImpl
 {
     public class DiceSpawn : MonoBehaviour
     {
+        [SerializeField]
+        private GameObject[] _toSpawn;
+
         protected Rigidbody _rb;
 
         private void Start()
@@ -60,7 +63,7 @@ namespace Scripts.Dice.DiceImpl
                 }
                 else
                 {
-                    var go = Instantiate(ConfigManager.S.Info.Enemies[value], transform.position, Quaternion.identity);
+                    var go = Instantiate(_toSpawn[value], transform.position, _toSpawn[value].transform.rotation);
                     var rb = go.GetComponent<Rigidbody>();
                     rb.AddForce((Vector3.up) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
                     DiceManager.S.DiceCount--;
