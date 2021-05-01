@@ -23,5 +23,8 @@ namespace Scripts.ScriptableObjects
         [Header("Mine")]
         public float TimeBeforeExplosion;
         public float ExplosionForce;
+
+        [Header("Canon")]
+        public float CanonForce;
     }
 }

@@ -26,3 +26,4 @@ MonoBehaviour:
   MasterNbDicesSpawn: 5
   TimeBeforeExplosion: 1
   ExplosionForce: 10
+  CanonForce: 10

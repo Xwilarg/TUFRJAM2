@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Config;
+﻿using Scripts.Config;
 using Scripts.Enemy;
 using Scripts.Player;
 using System.Collections;
