@@ -5,9 +5,6 @@ namespace Scripts.Dice
 {
     public class DiceManager : MonoBehaviour
     {
-        [SerializeField]
-        private DiceInspector[] _dices;
-
         private void Start()
         {
             SpawnDices();
@@ -15,11 +12,8 @@ namespace Scripts.Dice
 
         private void SpawnDices()
         {
-            foreach (var dice in _dices)
-            {
-                var cam = UnityEngine.Camera.main;
-                Instantiate(dice.Prefab, cam.transform.position + cam.transform.forward * ConfigManager.S.Info.SpawnDist, Quaternion.identity);
-            }
+            var cam = UnityEngine.Camera.main;
+            Instantiate(ConfigManager.S.Info.DiceMaster, cam.transform.position + cam.transform.forward * ConfigManager.S.Info.SpawnDist, Quaternion.identity);
         }
     }
 }

@@ -1,21 +1,19 @@
 ﻿using Assets.Scripts.Config;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Scripts.Dice
+namespace Scripts.Dice.DiceImpl
 {
-    public class DiceController : MonoBehaviour
+    public class DiceSpawn : MonoBehaviour
     {
-        private Rigidbody _rb;
+        protected Rigidbody _rb;
 
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
+            StartCoroutine(LandTimer());
         }
-
-        private ThrowState _state = ThrowState.WAITING;
-        private Vector3 _offset;
-        private Vector3 _velocity;
 
         Dictionary<Vector3, int> _directions = new Dictionary<Vector3, int>
         {
@@ -27,16 +25,17 @@ namespace Scripts.Dice
             { Vector3.left, 5 }
         };
 
+        private bool _canLand = false;
+
+        private IEnumerator LandTimer()
+        {
+            yield return new WaitForSeconds(1f);
+            _canLand = true;
+        }
+
         private void Update()
         {
-            if (_state == ThrowState.IN_HAND)
-            {
-                var oldT = transform.position;
-                transform.position = _offset + UnityEngine.Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -UnityEngine.Camera.main.transform.position.z));
-                _velocity = transform.position - oldT;
-            }
-
-            if (_state == ThrowState.THROWN && _rb.velocity.magnitude < .1f && transform.position.y < 1.5f)
+            if (_canLand == true && _rb.velocity.magnitude < .1f && transform.position.y < 1.5f)
             {
                 // From https://answers.unity.com/questions/1215416/rolling-a-3d-dice-detect-which-number-faces-up.html
                 Vector3 referenceVectorUp = Vector3.up;
@@ -61,35 +60,11 @@ namespace Scripts.Dice
                 }
                 else
                 {
-                    Debug.Log(value);
                     var go = Instantiate(ConfigManager.S.Info.Enemies[value], transform.position, Quaternion.identity);
                     var rb = go.GetComponent<Rigidbody>();
-                    rb.AddForce((Vector3.up + Vector3.right * Random.Range(-1f, 1f) + Vector3.forward * Random.Range(-1f, 1f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
-                    rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
+                    rb.AddForce((Vector3.up) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
                     Destroy(gameObject);
                 }
-            }
-        }
-
-        private void OnMouseDown()
-        {
-            if (_state == ThrowState.WAITING)
-            {
-                _offset = transform.position - UnityEngine.Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -UnityEngine.Camera.main.transform.position.z));
-                _state = ThrowState.IN_HAND;
-            }
-        }
-
-        private void OnMouseUp()
-        {
-            if (_state == ThrowState.IN_HAND)
-            {
-                _rb.isKinematic = false;
-                Vector3 mov = _velocity * ConfigManager.S.Info.FireVelocity;
-                mov.z = Mathf.Abs(_velocity.x + _velocity.y) * ConfigManager.S.Info.FireVelocity;
-                _rb.AddForce(mov, ForceMode.Impulse);
-                _rb.AddTorque(mov * 10f);
-                _state = ThrowState.THROWN;
             }
         }
     }
