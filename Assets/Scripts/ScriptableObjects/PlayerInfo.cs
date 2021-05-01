@@ -7,8 +7,12 @@ namespace Scripts.ScriptableObjects
     {
         [Header("Player")]
         public float Speed;
-
         public float FireVelocity;
+
+        [Header("Enemy")]
+        public float EnemySpeed;
+        public float MinDistanceWithPlayer;
+        public float MaxDistanceWithPlayer;
 
         [Header("Dice")]
         public float ThrowForce;

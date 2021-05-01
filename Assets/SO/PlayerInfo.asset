@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   FireVelocity: 20
+  EnemySpeed: 5
+  MinDistanceWithPlayer: 3
+  MaxDistanceWithPlayer: 20
   ThrowForce: 2
   SpawnDist: 3
   RelaunchForce: 5
