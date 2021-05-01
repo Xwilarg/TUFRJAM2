@@ -13,8 +13,10 @@ namespace Scripts.ScriptableObjects
         [Header("Dice")]
         public float ThrowForce;
         public float SpawnDist;
+        public float RelaunchForce;
+        public float RelaunchTorque;
 
         [Header("Spawnable")]
-        public GameObject[] _enemies;
+        public GameObject[] Enemies;
     }
 }

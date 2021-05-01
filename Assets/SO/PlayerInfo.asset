@@ -16,3 +16,12 @@ MonoBehaviour:
   FireVelocity: 20
   ThrowForce: 2
   SpawnDist: 3
+  RelaunchForce: 5
+  RelaunchTorque: 10
+  Enemies:
+  - {fileID: 5094292341848583963, guid: bdcc12425ee535046b7d5cf5d7831442, type: 3}
+  - {fileID: 1400598750575626619, guid: b09f611174e080644881196ff0c2ca5d, type: 3}
+  - {fileID: 1400598750575626619, guid: b09f611174e080644881196ff0c2ca5d, type: 3}
+  - {fileID: 5094292341848583963, guid: bdcc12425ee535046b7d5cf5d7831442, type: 3}
+  - {fileID: 1400598750575626619, guid: b09f611174e080644881196ff0c2ca5d, type: 3}
+  - {fileID: 5286303642239543579, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}

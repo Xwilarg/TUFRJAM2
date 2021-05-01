@@ -17,7 +17,7 @@ namespace Scripts.Dice
         private Vector3 _offset;
         private Vector3 _velocity;
 
-        Dictionary<Vector3, int> directions = new Dictionary<Vector3, int>
+        Dictionary<Vector3, int> _directions = new Dictionary<Vector3, int>
         {
             { Vector3.up, 0 },
             { Vector3.forward, 1 },
@@ -36,15 +36,15 @@ namespace Scripts.Dice
                 _velocity = transform.position - oldT;
             }
 
-            if (_state == ThrowState.THROWN && _rb.velocity.magnitude < .1f && transform.position.y < 2f)
+            if (_state == ThrowState.THROWN && _rb.velocity.magnitude < .1f && transform.position.y < 1.5f)
             {
                 // From https://answers.unity.com/questions/1215416/rolling-a-3d-dice-detect-which-number-faces-up.html
                 Vector3 referenceVectorUp = Vector3.up;
-                float epsilonDeg = 5f;
+                float epsilonDeg = 15f;
                 Vector3 referenceObjectSpace = transform.InverseTransformDirection(referenceVectorUp);
                 float min = float.MaxValue;
                 Vector3 minKey = Vector3.zero;
-                foreach (Vector3 key in directions.Keys)
+                foreach (Vector3 key in _directions.Keys)
                 {
                     float a = Vector3.Angle(referenceObjectSpace, key);
                     if (a <= epsilonDeg && a < min)
@@ -53,7 +53,21 @@ namespace Scripts.Dice
                         minKey = key;
                     }
                 }
-                Debug.Log((min < epsilonDeg) ? directions[minKey] % 2 : -1);
+                var value = (min < epsilonDeg) ? _directions[minKey] : -1;
+                if (value == -1)
+                {
+                    _rb.AddForce((Vector3.up + Vector3.right * Random.Range(-1f, 1f) + Vector3.forward * Random.Range(-1f, 1f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
+                    _rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
+                }
+                else
+                {
+                    Debug.Log(value);
+                    var go = Instantiate(ConfigManager.S.Info.Enemies[value], transform.position, Quaternion.identity);
+                    var rb = go.GetComponent<Rigidbody>();
+                    rb.AddForce((Vector3.up + Vector3.right * Random.Range(-1f, 1f) + Vector3.forward * Random.Range(-1f, 1f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
+                    rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
+                    Destroy(gameObject);
+                }
             }
         }
 
