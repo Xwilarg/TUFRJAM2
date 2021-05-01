@@ -27,3 +27,4 @@ MonoBehaviour:
   TimeBeforeExplosion: 1
   ExplosionForce: 10
   CanonForce: 10
+  FeetForce: 20

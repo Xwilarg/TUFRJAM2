@@ -37,11 +37,21 @@ namespace Scripts.Player
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (_canMove) return;
-
-            if (collision.collider.CompareTag("Floor"))
+            if (_canMove)
             {
-                _canMove = true;
+                if (collision.collider.CompareTag("Ball"))
+                {
+                    var dir = collision.collider.transform.position - transform.position;
+                    dir.y = Mathf.Abs(new Vector2(dir.x, dir.z).magnitude) / 2f;
+                    collision.collider.GetComponent<Rigidbody>().AddForce(dir * ConfigManager.S.Info.FeetForce, ForceMode.Impulse);
+                }
+            }
+            else
+            {
+                if (collision.collider.CompareTag("Floor"))
+                {
+                    _canMove = true;
+                }
             }
         }
 

@@ -26,5 +26,8 @@ namespace Scripts.ScriptableObjects
 
         [Header("Canon")]
         public float CanonForce;
+
+        [Header("Ball")]
+        public float FeetForce;
     }
 }
