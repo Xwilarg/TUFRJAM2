@@ -1,4 +1,6 @@
 using Scripts.Config;
+using Scripts.Enemy;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +25,11 @@ namespace Scripts.Player
 
         private void Start()
         {
+            foreach (var e in GameObject.FindGameObjectsWithTag("Enemy").Select(x => x.GetComponent<EnemyController>()))
+            {
+                e.Player = this;
+            }
+
             _rb = GetComponent<Rigidbody>();
             GameObject.FindGameObjectWithTag("Spawn").SetActive(false);
             _rb.AddForce(Vector3.down * 30f, ForceMode.Impulse);
