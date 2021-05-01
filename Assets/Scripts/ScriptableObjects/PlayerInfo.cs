@@ -9,5 +9,8 @@ namespace Scripts.ScriptableObjects
         public float Speed;
 
         public float FireVelocity;
+
+        [Header("Dice")]
+        public float ThrowForce;
     }
 }
