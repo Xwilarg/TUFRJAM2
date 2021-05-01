@@ -71,5 +71,15 @@ namespace Scripts.Player
             _health[_healthIndex].color = Color.gray;
             _healthIndex++;
         }
+
+        public bool GainHealth()
+        {
+            if (_health.Length == 0) return true;
+            if (_healthIndex == _health.Length - 1) return false;
+
+            _health[_healthIndex].color = Color.red;
+            _healthIndex--;
+            return true;
+        }
     }
 }
