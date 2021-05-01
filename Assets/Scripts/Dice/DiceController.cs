@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Config;
+using UnityEngine;
 
 namespace Scripts.Dice
 {
@@ -33,7 +34,10 @@ namespace Scripts.Dice
             {
                 var rb = GetComponent<Rigidbody>();
                 rb.isKinematic = false;
-                rb.AddForce(_velocity, ForceMode.Impulse);
+                Vector3 mov = _velocity * ConfigManager.S.Info.FireVelocity;
+                mov.z = Mathf.Abs(_velocity.x + _velocity.y) * ConfigManager.S.Info.FireVelocity;
+                rb.AddForce(mov, ForceMode.Impulse);
+                rb.AddTorque(mov * 10f);
                 _state = ThrowState.THROWN;
             }
         }

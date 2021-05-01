@@ -12,5 +12,6 @@ namespace Scripts.ScriptableObjects
 
         [Header("Dice")]
         public float ThrowForce;
+        public float SpawnDist;
     }
 }

@@ -1,3 +1,4 @@
+using Assets.Scripts.Config;
 using Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,9 +8,6 @@ namespace Scripts.Player
     public class PlayerController : MonoBehaviour
     {
         private Rigidbody _rb;
-
-        [SerializeField]
-        private PlayerInfo _info;
 
         [SerializeField]
         private Image[] _health;
@@ -29,7 +27,7 @@ namespace Scripts.Player
 
         private void FixedUpdate()
         {
-            _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * _info.Speed, _rb.velocity.y, Input.GetAxis("Vertical") * _info.Speed);
+            _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * ConfigManager.S.Info.Speed, _rb.velocity.y, Input.GetAxis("Vertical") * ConfigManager.S.Info.Speed);
         }
 
         private void Update()
@@ -46,7 +44,7 @@ namespace Scripts.Player
             if (Input.GetMouseButtonDown(0))
             {
                 var go = Instantiate(_bullet, _gunEnd.position, Quaternion.identity);
-                go.GetComponent<Rigidbody>().AddForce(transform.forward * _info.FireVelocity, ForceMode.Impulse);
+                go.GetComponent<Rigidbody>().AddForce(transform.forward * ConfigManager.S.Info.FireVelocity, ForceMode.Impulse);
             }
         }
 

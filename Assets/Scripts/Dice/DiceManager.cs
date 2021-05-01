@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Config;
+using UnityEngine;
 
 namespace Scripts.Dice
 {
@@ -17,7 +18,7 @@ namespace Scripts.Dice
             foreach (var dice in _dices)
             {
                 var cam = UnityEngine.Camera.main;
-                Instantiate(dice.Prefab, cam.transform.position + cam.transform.forward * 3f, Quaternion.identity);
+                Instantiate(dice.Prefab, cam.transform.position + cam.transform.forward * ConfigManager.S.Info.SpawnDist, Quaternion.identity);
             }
         }
     }
