@@ -18,10 +18,16 @@ MonoBehaviour:
   SpawnDist: 3
   RelaunchForce: 5
   RelaunchTorque: 10
+  DiceMaster: {fileID: 2190255886133405991, guid: 466a763b0db02dd41b50d28a1c3dc611, type: 3}
+  DiceEnemy: {fileID: 0}
+  DiceAllie: {fileID: 5710092053343311524, guid: 3b0a1bf65cb95cf4aa3a682b6f93d104, type: 3}
+  DiceNeutral: {fileID: 2560410872936291293, guid: 07e192950fb3dce4ab81b35f349ad024, type: 3}
+  DiceObjective: {fileID: 1596750224406318325, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+  MasterNbDicesSpawn: 5
   Enemies:
   - {fileID: 5094292341848583963, guid: bdcc12425ee535046b7d5cf5d7831442, type: 3}
   - {fileID: 1400598750575626619, guid: b09f611174e080644881196ff0c2ca5d, type: 3}
-  - {fileID: 1400598750575626619, guid: b09f611174e080644881196ff0c2ca5d, type: 3}
+  - {fileID: 5286303642239543579, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}
   - {fileID: 5094292341848583963, guid: bdcc12425ee535046b7d5cf5d7831442, type: 3}
   - {fileID: 1400598750575626619, guid: b09f611174e080644881196ff0c2ca5d, type: 3}
   - {fileID: 5286303642239543579, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}

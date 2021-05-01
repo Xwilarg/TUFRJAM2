@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1175508454803747447
+--- !u!1 &2190255886133405991
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,31 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1953416662015011021}
+  - component: {fileID: 1526309825774941085}
+  - component: {fileID: 1023835169913248599}
+  - component: {fileID: 7957104367083511368}
   m_Layer: 0
-  m_Name: Dice Mystere
+  m_Name: Master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1953416662015011021
+--- !u!4 &1526309825774941085
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175508454803747447}
+  m_GameObject: {fileID: 2190255886133405991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.886835, y: 0, z: -260.51776}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8136665083183216170}
-  - {fileID: 7858749633950196360}
+  - {fileID: 9141842567163194746}
+  - {fileID: 7150176402584517080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4188780723882469318
+--- !u!54 &1023835169913248599
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2190255886133405991}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7957104367083511368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2190255886133405991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757c6205d7e34734989683dff4d60633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3690647291901922525
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,45 +70,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7858749633950196360}
-  - component: {fileID: 4578170195756445946}
-  - component: {fileID: 741696458407577144}
+  - component: {fileID: 9141842567163194746}
+  - component: {fileID: 1093690065870519465}
+  - component: {fileID: 8782709164272785194}
+  - component: {fileID: 1023835169913248596}
   m_Layer: 0
-  m_Name: Face
+  m_Name: Dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7858749633950196360
+--- !u!4 &9141842567163194746
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188780723882469318}
+  m_GameObject: {fileID: 3690647291901922525}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: -4.1624516e-15}
   m_LocalScale: {x: 0.009186, y: 0.009186, z: 0.009186}
   m_Children: []
-  m_Father: {fileID: 1953416662015011021}
-  m_RootOrder: 1
+  m_Father: {fileID: 1526309825774941085}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4578170195756445946
+--- !u!33 &1093690065870519465
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188780723882469318}
-  m_Mesh: {fileID: 3621554888825754127, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
---- !u!23 &741696458407577144
+  m_GameObject: {fileID: 3690647291901922525}
+  m_Mesh: {fileID: -835688487210165693, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
+--- !u!23 &8782709164272785194
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4188780723882469318}
+  m_GameObject: {fileID: 3690647291901922525}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,7 +123,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0bf08079e515f6845951357caaf5a23a, type: 2}
+  - {fileID: 7626191068330388430, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,7 +145,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4396274656205166477
+--- !u!64 &1023835169913248596
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690647291901922525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -835688487210165693, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
+--- !u!1 &3752885289614294166
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,45 +167,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8136665083183216170}
-  - component: {fileID: 79083440685639673}
-  - component: {fileID: 8635397036200889466}
+  - component: {fileID: 7150176402584517080}
+  - component: {fileID: 3584171653089520554}
+  - component: {fileID: 323815341278338408}
   m_Layer: 0
-  m_Name: Dice
+  m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8136665083183216170
+--- !u!4 &7150176402584517080
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396274656205166477}
+  m_GameObject: {fileID: 3752885289614294166}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: -4.1624516e-15}
   m_LocalScale: {x: 0.009186, y: 0.009186, z: 0.009186}
   m_Children: []
-  m_Father: {fileID: 1953416662015011021}
-  m_RootOrder: 0
+  m_Father: {fileID: 1526309825774941085}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &79083440685639673
+--- !u!33 &3584171653089520554
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396274656205166477}
-  m_Mesh: {fileID: -835688487210165693, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
---- !u!23 &8635397036200889466
+  m_GameObject: {fileID: 3752885289614294166}
+  m_Mesh: {fileID: 3621554888825754127, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
+--- !u!23 &323815341278338408
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396274656205166477}
+  m_GameObject: {fileID: 3752885289614294166}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -174,7 +219,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7626191068330388430, guid: 6e4e3f35e0e5bc643b9503b08adec06e, type: 3}
+  - {fileID: 2100000, guid: 0bf08079e515f6845951357caaf5a23a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

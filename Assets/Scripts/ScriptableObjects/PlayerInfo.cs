@@ -16,6 +16,10 @@ namespace Scripts.ScriptableObjects
         public float RelaunchForce;
         public float RelaunchTorque;
 
+        public GameObject DiceMaster, DiceEnemy, DiceAllie, DiceNeutral, DiceObjective;
+
+        public int MasterNbDicesSpawn;
+
         [Header("Spawnable")]
         public GameObject[] Enemies;
     }

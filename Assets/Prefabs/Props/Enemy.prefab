@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5286303642239543578}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5286303642239543579}
-  m_Mesh: {fileID: 849032210722914114, guid: 0a9447bf9db7b714f9f445e707ebeb1a, type: 3}
+  m_Mesh: {fileID: 1705324974331375986, guid: dd302ef3e0a3d404e92eb9aa76c370c7, type: 3}
 --- !u!23 &5286303642239543583
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 849032210722914114, guid: 0a9447bf9db7b714f9f445e707ebeb1a, type: 3}
+  m_Mesh: {fileID: 1705324974331375986, guid: dd302ef3e0a3d404e92eb9aa76c370c7, type: 3}
 --- !u!54 &5286303642239543581
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &5286303642239543578
 MonoBehaviour:
