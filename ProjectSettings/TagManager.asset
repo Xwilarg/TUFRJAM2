@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Dice
+  - Floor
+  - Spawn
   layers:
   - Default
   - TransparentFX

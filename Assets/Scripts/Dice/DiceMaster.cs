@@ -33,7 +33,9 @@ namespace Scripts.Dice
                     var rb = go.GetComponent<Rigidbody>();
                     rb.AddForce((Vector3.up + Vector3.right * Random.Range(.5f, 1f) + Vector3.forward * Random.Range(.5f, 1f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
                     rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
+                    DiceManager.S.DiceCount++;
                 }
+                DiceManager.S.DiceCount--;
                 Destroy(gameObject); ;
             }
         }

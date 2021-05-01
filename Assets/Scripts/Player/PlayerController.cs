@@ -1,5 +1,4 @@
 using Assets.Scripts.Config;
-using Scripts.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,18 +19,36 @@ namespace Scripts.Player
 
         private int _healthIndex = 0;
 
+        private bool _canMove = false;
+
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
+            GameObject.FindGameObjectWithTag("Spawn").SetActive(false);
+            _rb.AddForce(Vector3.down * 30f, ForceMode.Impulse);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (_canMove) return;
+
+            if (collision.collider.CompareTag("Floor"))
+            {
+                _canMove = true;
+            }
         }
 
         private void FixedUpdate()
         {
+            if (!_canMove) return;
+
             _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * ConfigManager.S.Info.Speed, _rb.velocity.y, Input.GetAxis("Vertical") * ConfigManager.S.Info.Speed);
         }
 
         private void Update()
         {
+            if (!_canMove) return;
+
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit))

@@ -63,6 +63,7 @@ namespace Scripts.Dice.DiceImpl
                     var go = Instantiate(ConfigManager.S.Info.Enemies[value], transform.position, Quaternion.identity);
                     var rb = go.GetComponent<Rigidbody>();
                     rb.AddForce((Vector3.up) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
+                    DiceManager.S.DiceCount--;
                     Destroy(gameObject);
                 }
             }
