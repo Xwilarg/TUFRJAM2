@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   Speed: 5
+  FireVelocity: 20

@@ -1,5 +1,6 @@
 using Scripts.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Scripts.Player
 {
@@ -9,6 +10,17 @@ namespace Scripts.Player
 
         [SerializeField]
         private PlayerInfo _info;
+
+        [SerializeField]
+        private Image[] _health;
+
+        [SerializeField]
+        private Transform _gunEnd;
+
+        [SerializeField]
+        private GameObject _bullet;
+
+        private int _healthIndex = 0;
 
         private void Start()
         {
@@ -22,7 +34,7 @@ namespace Scripts.Player
 
         private void Update()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -30,6 +42,18 @@ namespace Scripts.Player
                 var rot = transform.rotation.eulerAngles;
                 transform.rotation = Quaternion.Euler(0f, rot.y, 0f);
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                var go = Instantiate(_bullet, _gunEnd.position, Quaternion.identity);
+                go.GetComponent<Rigidbody>().AddForce(transform.forward * _info.FireVelocity, ForceMode.Impulse);
+            }
+        }
+
+        public void TakeDamage()
+        {
+            _health[_healthIndex].color = Color.gray;
+            _healthIndex++;
         }
     }
 }
