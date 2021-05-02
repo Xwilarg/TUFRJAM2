@@ -4,8 +4,8 @@ Theme: Alea jacta est
 
 ## Description
 ```
-- What are we playing at today?
-- I don't know, roll the dices
+- Gee, Brain, what do you want to do tonight?
+- The same thing we do every night, Pinky - try to play a board game!
 ```
 
 Welcome in our jam project, launch the game, roll the dices and try to put a goal<br/>
