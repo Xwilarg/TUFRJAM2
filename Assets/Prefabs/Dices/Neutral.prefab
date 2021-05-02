@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a67f23070b7848d40b94638dde154282, type: 2}
     - target: {fileID: 1596750224406318325, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
       propertyPath: m_Name
-      value: Dice Mystere
+      value: Neutral
       objectReference: {fileID: 0}
     - target: {fileID: 2117566426678285903, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
       propertyPath: m_RootOrder
@@ -59,5 +59,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: _toSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 639126477130624775, guid: 09e33ab2aa404424dbb403b0e0109165, type: 3}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: _toSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 2956745392241322441, guid: da4e89ae3ff399e49b1e726ee2461fc9, type: 3}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: _toSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 868214360160795638, guid: 1ee804479336ce9408452f7209b3ff7d, type: 3}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: _toSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 639126477130624775, guid: 09e33ab2aa404424dbb403b0e0109165, type: 3}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: _toSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 2956745392241322441, guid: da4e89ae3ff399e49b1e726ee2461fc9, type: 3}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: _toSpawn.Array.data[5]
+      value: 
+      objectReference: {fileID: 868214360160795638, guid: 1ee804479336ce9408452f7209b3ff7d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}

@@ -29,6 +29,8 @@ namespace Scripts.Dice
             {
                 SpawnDices(1, ConfigManager.S.Info.DiceObjective);
                 SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn, ConfigManager.S.Info.DiceEnemy);
+                SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn, ConfigManager.S.Info.DiceAllie);
+                SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn, ConfigManager.S.Info.DiceNeutral);
                 DiceManager.S.DiceCount--;
                 Destroy(gameObject);
             }
@@ -40,7 +42,7 @@ namespace Scripts.Dice
             {
                 var go = Instantiate(prefab, transform.position, Quaternion.identity);
                 var rb = go.GetComponent<Rigidbody>();
-                rb.AddForce((Vector3.up + Vector3.right * Random.Range(-5f, 5f) + Vector3.forward * Random.Range(-5f, 5f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
+                rb.AddForce((Vector3.up + Vector3.right * Random.Range(-15f, 15f) + Vector3.forward * Random.Range(-15f, 15f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
                 rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
                 DiceManager.S.DiceCount++;
             }
