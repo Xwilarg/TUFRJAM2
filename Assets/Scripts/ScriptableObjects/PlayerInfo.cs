@@ -13,7 +13,8 @@ namespace Scripts.ScriptableObjects
         public float EnemySpeed;
         public float MinDistanceWithPlayer;
         public float MinDistanceWithBall;
-        public float MaxDistanceWithPlayer;
+
+        public float TimeAim, TimeLock, TimeReload;
 
         [Header("Dice")]
         public float ThrowForce;

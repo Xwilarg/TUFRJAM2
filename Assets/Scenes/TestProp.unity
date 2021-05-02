@@ -775,6 +775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5286303642239543578, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 4063462746519518439, guid: fb59dd8a78faf8640b9657abbc620027, type: 3}
     - target: {fileID: 5286303642239543579, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}
       propertyPath: m_Name
       value: Cow-boy
