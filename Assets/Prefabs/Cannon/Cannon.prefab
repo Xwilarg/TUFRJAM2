@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b6ffc0fa2627c448664994e7a336da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goal: {fileID: 0}
-  _ball: {fileID: 0}
+  _goal: {fileID: 1194373735757181388, guid: c05b2ce81f68cdb4cb41659df997ddc6, type: 3}
+  _ball: {fileID: 4547069836858790233, guid: 196fa368c52c92f439a4416a3eabfb6e, type: 3}
 --- !u!54 &1657049922
 Rigidbody:
   m_ObjectHideFlags: 0

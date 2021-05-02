@@ -12,6 +12,7 @@ namespace Scripts.ScriptableObjects
         [Header("Enemy")]
         public float EnemySpeed;
         public float MinDistanceWithPlayer;
+        public float MinDistanceWithBall;
         public float MaxDistanceWithPlayer;
 
         [Header("Dice")]

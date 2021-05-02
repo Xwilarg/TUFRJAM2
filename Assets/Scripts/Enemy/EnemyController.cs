@@ -1,4 +1,5 @@
-﻿using Scripts.Player;
+﻿using Scripts.Config;
+using Scripts.Player;
 using UnityEngine;
 
 namespace Scripts.Enemy
@@ -14,6 +15,8 @@ namespace Scripts.Enemy
         private LineRenderer _ln;
 
         public Rigidbody Rb;
+
+        public Transform Ball;
 
         public void TakeDamage()
         {
@@ -59,6 +62,16 @@ namespace Scripts.Enemy
                         transform.position + transform.forward * 100f
                     });
                 }
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.CompareTag("Ball"))
+            {
+                var dir = collision.collider.transform.position - transform.position;
+                dir.y = Mathf.Abs(new Vector2(dir.x, dir.z).magnitude) / 2f;
+                collision.collider.GetComponent<Rigidbody>().AddForce(dir * ConfigManager.S.Info.FeetForce, ForceMode.Impulse);
             }
         }
     }
