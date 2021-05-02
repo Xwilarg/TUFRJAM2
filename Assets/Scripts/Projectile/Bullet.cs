@@ -16,11 +16,11 @@ namespace Scripts.Projectile
         {
             if (collision.collider.CompareTag("Player"))
             {
-                collision.collider.GetComponent<PlayerController>().TakeDamage();
+                collision.collider.transform.parent.GetComponent<PlayerController>().TakeDamage();
             }
             else if (collision.collider.CompareTag("Enemy"))
             {
-                collision.collider.GetComponent<EnemyController>().TakeDamage();
+                collision.collider.GetComponent<EnemyController>().Stun(transform.position);
             }
             else if (collision.collider.CompareTag("Crate"))
             {

@@ -34,13 +34,17 @@ namespace Assets.Scripts.Prop
                     }
                     else if (col.gameObject.CompareTag("Enemy"))
                     {
-                        col.gameObject.GetComponent<EnemyController>().TakeDamage();
+                        col.gameObject.GetComponent<EnemyController>().Stun(transform.position);
                     }
                     var vel = transform.position - col.transform.position;
                     vel.x = _radius - vel.x;
                     vel.z = _radius - vel.z;
                     vel.y = Mathf.Abs(new Vector2(vel.x, vel.z).magnitude);
-                    col.gameObject.GetComponent<Rigidbody>()?.AddForce(vel * ConfigManager.S.Info.ExplosionForce, ForceMode.Impulse);
+                    var rb = col.gameObject.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.AddForce(vel * ConfigManager.S.Info.ExplosionForce, ForceMode.Impulse);
+                    }
                 }
             }
             Destroy(gameObject);

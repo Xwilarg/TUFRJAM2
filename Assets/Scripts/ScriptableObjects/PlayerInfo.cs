@@ -35,5 +35,9 @@ namespace Scripts.ScriptableObjects
 
         [Header("Ball")]
         public float FeetForce;
+
+        [Header("Bullet")]
+        public float StunTime;
+        public float StunForce;
     }
 }

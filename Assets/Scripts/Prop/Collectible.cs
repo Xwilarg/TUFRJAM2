@@ -20,7 +20,7 @@ namespace Scripts.Prop
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player") && other.GetComponent<PlayerController>().GainHealth())
+            if (other.CompareTag("Player") && other.transform.parent.GetComponent<PlayerController>().GainHealth())
             {
                 Destroy(gameObject);
             }

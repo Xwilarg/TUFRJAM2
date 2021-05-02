@@ -16,6 +16,7 @@ namespace Scripts.Dice.DiceImpl
         {
             _rb = GetComponent<Rigidbody>();
             StartCoroutine(LandTimer());
+            StartCoroutine(CancelDice());
         }
 
         Dictionary<Vector3, int> _directions = new Dictionary<Vector3, int>
@@ -36,10 +37,26 @@ namespace Scripts.Dice.DiceImpl
             _canLand = true;
         }
 
+        private IEnumerator CancelDice()
+        {
+            yield return new WaitForSeconds(30f);
+            DiceManager.S.DiceCount--;
+            Destroy(gameObject);
+        }
+
+        private int _bounce = 3;
+
         private void Update()
         {
-            if (_canLand == true && _rb.velocity.magnitude < .1f && transform.position.y < 1.5f)
+            if (_canLand == true && _rb.velocity.magnitude < .1f && transform.position.y < 5f)
             {
+                if (_bounce > 0)
+                {
+                    _bounce--;
+                    _rb.AddForce((Vector3.up + Vector3.right * Random.Range(-1f, 1f) + Vector3.forward * Random.Range(-1f, 1f)) * ConfigManager.S.Info.RelaunchForce, ForceMode.Impulse);
+                    _rb.AddTorque(Vector3.one * ConfigManager.S.Info.RelaunchTorque);
+                    return;
+                }
                 // From https://answers.unity.com/questions/1215416/rolling-a-3d-dice-detect-which-number-faces-up.html
                 Vector3 referenceVectorUp = Vector3.up;
                 float epsilonDeg = 15f;
@@ -69,6 +86,14 @@ namespace Scripts.Dice.DiceImpl
                     DiceManager.S.DiceCount--;
                     Destroy(gameObject);
                 }
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.CompareTag("Wall"))
+            {
+                _rb.velocity = -_rb.velocity;
             }
         }
     }

@@ -6,8 +6,6 @@ namespace Scripts.Enemy
 {
     public class EnemyController : MonoBehaviour
     {
-        private int _health = 2;
-
         private AEnemyAI _ai;
 
         public PlayerController Player;
@@ -16,17 +14,16 @@ namespace Scripts.Enemy
 
         public Rigidbody Rb;
 
-        public Transform Ball;
+        public Transform Ball, Goal;
 
         public Transform Bullet;
 
-        public void TakeDamage()
+        private float _stunTimer = 0f;
+
+        public void Stun(Vector3 other)
         {
-            _health--;
-            if (_health == 0)
-            {
-                Destroy(gameObject);
-            }
+            _stunTimer = ConfigManager.S.Info.StunTime;
+            Rb.AddForce((transform.position - other) * ConfigManager.S.Info.StunForce, ForceMode.Impulse);
         }
 
         private void Start()
@@ -48,6 +45,11 @@ namespace Scripts.Enemy
 
         private void Update()
         {
+            if (_stunTimer > 0f)
+            {
+                _stunTimer -= Time.deltaTime;
+                return;
+            }
             _ai.Update();
             if (_ln.enabled)
             {
