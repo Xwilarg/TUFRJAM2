@@ -16,6 +16,7 @@ MonoBehaviour:
   FireVelocity: 20
   EnemySpeed: 5
   MinDistanceWithPlayer: 3
+  MinDistanceWithBall: 4
   MaxDistanceWithPlayer: 20
   ThrowForce: 2
   SpawnDist: 3
@@ -29,5 +30,5 @@ MonoBehaviour:
   MasterNbDicesSpawn: 5
   TimeBeforeExplosion: 1
   ExplosionForce: 10
-  CanonForce: 10
+  CanonForce: 30
   FeetForce: 20

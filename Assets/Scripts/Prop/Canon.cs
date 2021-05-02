@@ -14,12 +14,13 @@ namespace Scripts.Prop
 
         private void Start()
         {
+            if (transform.position.z < 15f) transform.Rotate(0f, 180f, 0f);
             StartCoroutine(SpawnAll());
         }
 
         private IEnumerator SpawnAll()
         {
-            var go = Instantiate(_goal, transform.position + -transform.forward * 2, Quaternion.identity);
+            var go = Instantiate(_goal, transform.position + -transform.forward * 2, transform.rotation);
             go.GetComponent<Rigidbody>().AddForce((-transform.forward + transform.up) * ConfigManager.S.Info.CanonForce, ForceMode.Impulse);
             yield return new WaitForSeconds(1f);
             Instantiate(_ball, transform.position + transform.up * 2f, Quaternion.identity);
