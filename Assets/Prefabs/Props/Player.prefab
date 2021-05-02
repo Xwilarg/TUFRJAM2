@@ -179,6 +179,7 @@ MonoBehaviour:
   _gunEnd: {fileID: 2975156254700724339}
   _bullet: {fileID: 4063462746519519003, guid: fb59dd8a78faf8640b9657abbc620027, type: 3}
   _cameraPrefab: {fileID: 8636852452888626621, guid: 3cfadaff0027b794ab94baeed884f901, type: 3}
+  IsFire: 0
 --- !u!1 &4486041349608484385
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 183c26948db411e41a61ebf31b739a76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -336,7 +337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6c49d3450146f4d4a937938dff6df9d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
