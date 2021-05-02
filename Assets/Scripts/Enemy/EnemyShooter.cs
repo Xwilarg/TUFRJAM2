@@ -10,21 +10,26 @@ namespace Scripts.Enemy
         private ShootState _state = ShootState.WAITING;
         public override void Update()
         {
-            if (_state == ShootState.WAITING || _state == ShootState.RELOAD || _state == ShootState.AIM)
+            if (Enemy.Player == null) return;
+
+            if (_state == ShootState.WAITING || _state == ShootState.RELOAD || _state == ShootState.AIM) // Follow the player with its gaze
             {
                 Enemy.gameObject.transform.LookAt(Enemy.Player.transform, Vector3.up);
                 Enemy.gameObject.transform.rotation = Quaternion.Euler(0f, Enemy.gameObject.transform.rotation.eulerAngles.y, 0f);
             }
-            if (_state == ShootState.WAITING || _state == ShootState.RELOAD) // Follow the player with its gaze
+            if (_state == ShootState.WAITING || _state == ShootState.RELOAD)
             {
-                if (Enemy.Ball != null && Vector3.Distance(Enemy.Ball.position, Enemy.gameObject.transform.position) < ConfigManager.S.Info.MinDistanceWithBall)
+                var ballDist = Vector3.Distance(Enemy.Ball.position, Enemy.gameObject.transform.position);
+                if (ballDist < ConfigManager.S.Info.MinDistanceWithBall && // Close enough to ball
+                    ((Enemy.Ball.position.z > Enemy.transform.position.z && Enemy.transform.position.z > Enemy.Goal.position.z) ||
+                    (Enemy.Ball.position.z < Enemy.transform.position.z && Enemy.transform.position.z < Enemy.Goal.position.z)))
                 {
                     Enemy.gameObject.transform.LookAt(Enemy.Ball, Vector3.up);
                     Enemy.gameObject.transform.rotation = Quaternion.Euler(0f, Enemy.gameObject.transform.rotation.eulerAngles.y, 0f);
                     Enemy.Rb.velocity = Enemy.transform.forward * ConfigManager.S.Info.EnemySpeed;
                     return;
                 }
-                else if (Enemy.Player != null)
+                else
                 {
                     var dist = Vector3.Distance(Enemy.Player.transform.position, Enemy.gameObject.transform.position);
                     if (dist < ConfigManager.S.Info.MinDistanceWithPlayer)

@@ -16,7 +16,7 @@ namespace Scripts.Enemy
 
         public Rigidbody Rb;
 
-        public Transform Ball;
+        public Transform Ball, Goal;
 
         public Transform Bullet;
 

@@ -10,6 +10,8 @@ TagManager:
   - Spawn
   - Ball
   - Crate
+  - Wall
+  - Goal
   layers:
   - Default
   - TransparentFX

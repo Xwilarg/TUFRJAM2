@@ -1,8 +1,9 @@
+using Scripts.Camera;
 using Scripts.Config;
 using Scripts.Enemy;
+using Scripts.Prop;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Scripts.Player
 {
@@ -11,15 +12,13 @@ namespace Scripts.Player
         private Rigidbody _rb;
 
         [SerializeField]
-        private Image[] _health;
-
-        [SerializeField]
         private Transform _gunEnd;
 
         [SerializeField]
         private GameObject _bullet;
 
-        private int _healthIndex = 0;
+        [SerializeField]
+        private GameObject _cameraPrefab;
 
         private bool _canMove = false;
 
@@ -29,6 +28,9 @@ namespace Scripts.Player
             {
                 e.Player = this;
             }
+
+            GameObject.FindGameObjectWithTag("Ball").GetComponent<Ball>().SetBall();
+            GameObject.FindGameObjectWithTag("Goal").GetComponent<Goal>().SetGoal();
 
             _rb = GetComponent<Rigidbody>();
             GameObject.FindGameObjectWithTag("Spawn").SetActive(false);
@@ -51,6 +53,12 @@ namespace Scripts.Player
                 if (collision.collider.CompareTag("Floor"))
                 {
                     _canMove = true;
+                    Destroy(UnityEngine.Camera.main.gameObject);
+                    var go = Instantiate(
+                        _cameraPrefab,
+                        new Vector3(_cameraPrefab.transform.position.x, _cameraPrefab.transform.position.y, transform.position.z),
+                        _cameraPrefab.transform.rotation);
+                    go.GetComponent<Follow>()._toFollow = transform;
                 }
             }
         }
@@ -59,7 +67,7 @@ namespace Scripts.Player
         {
             if (!_canMove) return;
 
-            _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * ConfigManager.S.Info.Speed, _rb.velocity.y, Input.GetAxis("Vertical") * ConfigManager.S.Info.Speed);
+            _rb.velocity = new Vector3(Input.GetAxis("Vertical") * ConfigManager.S.Info.Speed, _rb.velocity.y, -Input.GetAxis("Horizontal") * ConfigManager.S.Info.Speed);
         }
 
         private void Update()
@@ -83,20 +91,9 @@ namespace Scripts.Player
         }
 
         public void TakeDamage()
-        {
-            if (_health.Length == 0) return;
-            _health[_healthIndex].color = Color.gray;
-            _healthIndex++;
-        }
+            => HealthManager.S.TakeDamage();
 
         public bool GainHealth()
-        {
-            if (_health.Length == 0) return true;
-            if (_healthIndex == _health.Length - 1) return false;
-
-            _health[_healthIndex].color = Color.red;
-            _healthIndex--;
-            return true;
-        }
+            => HealthManager.S.GainHealth();
     }
 }

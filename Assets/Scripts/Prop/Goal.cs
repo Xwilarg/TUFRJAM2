@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Scripts.Prop
 {
-    public class Ball : MonoBehaviour
+    public class Goal : MonoBehaviour
     {
-        public void SetBall()
+        public void SetGoal()
         {
             foreach (var e in GameObject.FindGameObjectsWithTag("Enemy").Select(x => x.GetComponent<EnemyController>()))
             {
-                e.Ball = transform;
+                e.Goal = transform;
             }
         }
     }
