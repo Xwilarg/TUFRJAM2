@@ -1,6 +1,7 @@
 using Scripts.Camera;
 using Scripts.Config;
 using Scripts.Enemy;
+using Scripts.GameOver;
 using Scripts.Projectile;
 using Scripts.Prop;
 using System.Linq;
@@ -67,6 +68,7 @@ namespace Scripts.Player
 
         private void FixedUpdate()
         {
+            if (GameOverManager.S.DidGameEnd) return;
             if (!_canMove) return;
 
             _rb.velocity = new Vector3(Input.GetAxis("Vertical") * ConfigManager.S.Info.Speed, _rb.velocity.y, -Input.GetAxis("Horizontal") * ConfigManager.S.Info.Speed);
@@ -74,6 +76,7 @@ namespace Scripts.Player
 
         private void Update()
         {
+            if (GameOverManager.S.DidGameEnd) return;
             if (!_canMove) return;
 
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);

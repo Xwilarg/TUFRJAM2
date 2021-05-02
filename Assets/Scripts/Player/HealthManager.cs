@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scripts.GameOver;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -32,7 +33,7 @@ namespace Scripts.Player
             _health[_healthIndex].color = Color.gray;
             _healthIndex++;
             if (_healthIndex == _health.Length)
-                SceneManager.LoadScene("Main");
+                GameOverManager.S.Loose();
         }
 
         public bool GainHealth()

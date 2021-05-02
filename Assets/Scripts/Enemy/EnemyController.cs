@@ -1,4 +1,5 @@
 ﻿using Scripts.Config;
+using Scripts.GameOver;
 using Scripts.Player;
 using UnityEngine;
 
@@ -45,6 +46,7 @@ namespace Scripts.Enemy
 
         private void Update()
         {
+            if (GameOverManager.S.DidGameEnd) return;
             if (_stunTimer > 0f)
             {
                 _stunTimer -= Time.deltaTime;

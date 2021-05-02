@@ -1,7 +1,7 @@
 ﻿using Scripts.Enemy;
+using Scripts.GameOver;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Scripts.Prop
 {
@@ -19,7 +19,7 @@ namespace Scripts.Prop
         {
             if (collision.collider.CompareTag("Ball"))
             {
-                SceneManager.LoadScene("Main");
+                GameOverManager.S.Win();
             }
         }
     }
