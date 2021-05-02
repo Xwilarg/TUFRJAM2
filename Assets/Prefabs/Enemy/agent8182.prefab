@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3351809562123835794}
   - component: {fileID: 675806301522423128}
   m_Layer: 0
-  m_Name: Cowboy
+  m_Name: agent8182
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 43d8ad2b0f8b1da488f41654137011d2, type: 2}
+  - {fileID: 2100000, guid: bb01fabae21a02c498fd9e6c3141e8ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
