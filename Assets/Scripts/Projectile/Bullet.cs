@@ -1,5 +1,6 @@
 ﻿using Scripts.Enemy;
 using Scripts.Player;
+using Scripts.Prop;
 using UnityEngine;
 
 namespace Scripts.Projectile
@@ -20,6 +21,10 @@ namespace Scripts.Projectile
             else if (collision.collider.CompareTag("Enemy"))
             {
                 collision.collider.GetComponent<EnemyController>().TakeDamage();
+            }
+            else if (collision.collider.CompareTag("Crate"))
+            {
+                collision.collider.GetComponent<Crate>().TakeDamage();
             }
             Destroy(gameObject);
         }
