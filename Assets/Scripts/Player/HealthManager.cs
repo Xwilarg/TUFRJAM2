@@ -16,6 +16,14 @@ namespace Scripts.Player
         [SerializeField]
         private Image[] _health;
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene("Main");
+            }
+        }
+
         private int _healthIndex = 0;
 
         public void TakeDamage()
