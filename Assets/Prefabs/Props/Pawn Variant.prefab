@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5286303642239543579, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}
       propertyPath: m_Name
-      value: Pawn
+      value: Pawn Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5286303642239543583, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 36f316ddb47c5fc4dae909bfec21c461, type: 2}
+      objectReference: {fileID: 2100000, guid: d50f9d5331d897c4786b3a8f1300a425, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b76767f65be7ba43ac02f93c179f01d, type: 3}
