@@ -34,7 +34,7 @@ namespace Assets.Scripts.Prop
                     }
                     else if (col.gameObject.CompareTag("Enemy"))
                     {
-                        col.gameObject.GetComponent<EnemyController>().TakeDamage();
+                        col.gameObject.GetComponent<EnemyController>().Stun(transform.position);
                     }
                     var vel = transform.position - col.transform.position;
                     vel.x = _radius - vel.x;

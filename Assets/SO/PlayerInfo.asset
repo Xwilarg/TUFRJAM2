@@ -34,3 +34,5 @@ MonoBehaviour:
   ExplosionForce: 10
   CanonForce: 30
   FeetForce: 10
+  StunTime: 3
+  StunForce: 10

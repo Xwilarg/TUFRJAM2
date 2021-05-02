@@ -32,7 +32,7 @@ namespace Scripts.Dice
                 SpawnDices(1, ConfigManager.S.Info.DiceObjective);
                 SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn, ConfigManager.S.Info.DiceEnemy);
                 SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn / 2, ConfigManager.S.Info.DiceAllie);
-                SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn, ConfigManager.S.Info.DiceNeutral);
+                SpawnDices(ConfigManager.S.Info.MasterNbDicesSpawn * 2, ConfigManager.S.Info.DiceNeutral);
                 DiceManager.S.DiceCount--;
                 Destroy(gameObject);
             }
