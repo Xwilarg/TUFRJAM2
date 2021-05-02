@@ -11,7 +11,7 @@ namespace Scripts.Prop
             _health--;
             if(_health == 0)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }
