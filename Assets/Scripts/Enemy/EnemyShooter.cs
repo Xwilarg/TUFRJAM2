@@ -8,6 +8,13 @@ namespace Scripts.Enemy
         private float _timer = 3f;
 
         private ShootState _state = ShootState.WAITING;
+
+        public override void Stun()
+        {
+            _state = ShootState.WAITING;
+            Enemy.ToggleAim(false);
+        }
+
         public override void Update()
         {
             if (Enemy.Player == null) return;

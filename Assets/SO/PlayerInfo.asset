@@ -35,4 +35,4 @@ MonoBehaviour:
   CanonForce: 30
   FeetForce: 10
   StunTime: 3
-  StunForce: 10
+  StunForce: -50

@@ -20,6 +20,7 @@ namespace Scripts.Player
         public void TakeDamage()
         {
             if (_health.Length == 0) return;
+            if (_healthIndex == _health.Length) return;
             _health[_healthIndex].color = Color.gray;
             _healthIndex++;
         }
