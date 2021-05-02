@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Spawn
   - Ball
+  - Crate
   layers:
   - Default
   - TransparentFX
