@@ -5,6 +5,8 @@ namespace Scripts.Prop
 {
     public class Collectible : MonoBehaviour
     {
+        public bool IsHeal;
+
         private void Update()
         {
             if (transform.position.y < .75f)
@@ -20,9 +22,20 @@ namespace Scripts.Prop
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player") && other.transform.parent.GetComponent<PlayerController>().GainHealth())
+            if (IsHeal)
             {
-                Destroy(gameObject);
+                if (other.CompareTag("Player") && other.transform.parent.GetComponent<PlayerController>().GainHealth())
+                {
+                    Destroy(gameObject);
+                }
+            }
+            else
+            {
+                if (other.CompareTag("Player") && !other.transform.parent.GetComponent<PlayerController>().IsFire)
+                {
+                    other.transform.parent.GetComponent<PlayerController>().IsFire = true;
+                    Destroy(gameObject);
+                }
             }
         }
     }

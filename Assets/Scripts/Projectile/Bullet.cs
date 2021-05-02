@@ -12,6 +12,8 @@ namespace Scripts.Projectile
             Destroy(gameObject, 10f);
         }
 
+        public bool IsFire = false;
+
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.collider.CompareTag("Player"))
@@ -22,7 +24,7 @@ namespace Scripts.Projectile
             {
                 collision.collider.GetComponent<EnemyController>().Stun(transform.position);
             }
-            else if (collision.collider.CompareTag("Crate"))
+            else if (IsFire && collision.collider.CompareTag("Crate"))
             {
                 collision.collider.GetComponent<Crate>().TakeDamage();
             }

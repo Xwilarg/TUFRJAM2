@@ -60,6 +60,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
+      propertyPath: NbBounce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149838516967361338, guid: 637cce93d06eac140934a32fa7c253ea, type: 3}
       propertyPath: _toSpawn.Array.data[0]
       value: 
       objectReference: {fileID: 2956745392241322441, guid: da4e89ae3ff399e49b1e726ee2461fc9, type: 3}

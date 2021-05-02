@@ -14,11 +14,11 @@ namespace Scripts.Prop
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision collision)
         {
-            if (other.CompareTag("Ball"))
+            if (collision.collider.CompareTag("Ball"))
             {
-                Destroy(other.gameObject);
+                Destroy(collision.collider.gameObject);
             }
         }
     }
