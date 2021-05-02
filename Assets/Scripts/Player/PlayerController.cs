@@ -90,6 +90,7 @@ namespace Scripts.Player
                 var go = Instantiate(_bullet, _gunEnd.position, Quaternion.identity);
                 go.GetComponent<Rigidbody>().AddForce(transform.forward * ConfigManager.S.Info.FireVelocity, ForceMode.Impulse);
                 go.GetComponent<Bullet>().IsFire = IsFire;
+                IsFire = false;
             }
         }
 

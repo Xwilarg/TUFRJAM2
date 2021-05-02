@@ -1,6 +1,7 @@
 ﻿using Scripts.Enemy;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scripts.Prop
 {
@@ -18,7 +19,7 @@ namespace Scripts.Prop
         {
             if (collision.collider.CompareTag("Ball"))
             {
-                Destroy(collision.collider.gameObject);
+                SceneManager.LoadScene("Main");
             }
         }
     }
