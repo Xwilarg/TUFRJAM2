@@ -18,6 +18,8 @@ namespace Scripts.Enemy
 
         public Transform Ball;
 
+        public Transform Bullet;
+
         public void TakeDamage()
         {
             _health--;
@@ -30,6 +32,7 @@ namespace Scripts.Enemy
         private void Start()
         {
             _ln = GetComponentInChildren<LineRenderer>();
+            ToggleAim(false);
             Rb = GetComponent<Rigidbody>();
             _ai = new EnemyShooter
             {

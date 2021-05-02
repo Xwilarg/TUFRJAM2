@@ -17,7 +17,9 @@ MonoBehaviour:
   EnemySpeed: 5
   MinDistanceWithPlayer: 3
   MinDistanceWithBall: 4
-  MaxDistanceWithPlayer: 20
+  TimeAim: 3
+  TimeLock: 2
+  TimeReload: 5
   ThrowForce: 2
   SpawnDist: 3
   RelaunchForce: 5
