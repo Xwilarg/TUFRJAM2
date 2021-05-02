@@ -13,5 +13,13 @@ namespace Scripts.Prop
                 e.Goal = transform;
             }
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Ball"))
+            {
+                Destroy(other.gameObject);
+            }
+        }
     }
 }
