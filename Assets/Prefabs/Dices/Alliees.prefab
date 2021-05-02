@@ -62,6 +62,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f76e61ce75f3bc4cbdf48c7c36971e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _toSpawn:
+  - {fileID: 552623408746639980, guid: 2328d3090b171a34c8afa5f72809623b, type: 3}
+  - {fileID: 552623408746639980, guid: 2328d3090b171a34c8afa5f72809623b, type: 3}
+  - {fileID: 552623408746639980, guid: 2328d3090b171a34c8afa5f72809623b, type: 3}
+  - {fileID: 552623408746639980, guid: 2328d3090b171a34c8afa5f72809623b, type: 3}
+  - {fileID: 552623408746639980, guid: 2328d3090b171a34c8afa5f72809623b, type: 3}
+  - {fileID: 552623408746639980, guid: 2328d3090b171a34c8afa5f72809623b, type: 3}
 --- !u!1 &7092281350764229470
 GameObject:
   m_ObjectHideFlags: 0
