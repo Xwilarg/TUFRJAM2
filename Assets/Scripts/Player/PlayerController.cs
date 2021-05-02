@@ -1,6 +1,7 @@
 using Scripts.Camera;
 using Scripts.Config;
 using Scripts.Enemy;
+using Scripts.Projectile;
 using Scripts.Prop;
 using System.Linq;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Scripts.Player
         private GameObject _cameraPrefab;
 
         private bool _canMove = false;
+        public bool IsFire = false;
 
         private void Start()
         {
@@ -87,6 +89,7 @@ namespace Scripts.Player
             {
                 var go = Instantiate(_bullet, _gunEnd.position, Quaternion.identity);
                 go.GetComponent<Rigidbody>().AddForce(transform.forward * ConfigManager.S.Info.FireVelocity, ForceMode.Impulse);
+                go.GetComponent<Bullet>().IsFire = IsFire;
             }
         }
 

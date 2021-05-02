@@ -12,6 +12,8 @@ namespace Scripts.Dice.DiceImpl
 
         protected Rigidbody _rb;
 
+        public int NbBounce;
+
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
