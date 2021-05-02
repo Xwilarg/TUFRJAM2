@@ -20,7 +20,7 @@ namespace Scripts.Prop
 
         private IEnumerator SpawnAll()
         {
-            var go = Instantiate(_goal, transform.position + -transform.forward * 2, transform.rotation);
+            var go = Instantiate(_goal, transform.position + -transform.forward * 2 + transform.up * 2f, transform.rotation);
             go.GetComponent<Rigidbody>().AddForce((-transform.forward + transform.up) * ConfigManager.S.Info.CanonForce, ForceMode.Impulse);
             yield return new WaitForSeconds(1f);
             Instantiate(_ball, transform.position + transform.up * 2f, Quaternion.identity);

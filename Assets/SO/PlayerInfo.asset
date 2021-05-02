@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a734c9c34a14a84a953ccde19dc0c11, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 10
   FireVelocity: 20
-  EnemySpeed: 5
+  EnemySpeed: 10
   MinDistanceWithPlayer: 3
   MinDistanceWithBall: 4
   TimeAim: 3

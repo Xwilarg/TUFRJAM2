@@ -44,7 +44,7 @@ namespace Scripts.Player
                 if (collision.collider.CompareTag("Ball"))
                 {
                     var dir = collision.collider.transform.position - transform.position;
-                    dir.y = Mathf.Abs(new Vector2(dir.x, dir.z).magnitude) / 2f;
+                    dir.y = Mathf.Abs(new Vector2(dir.x, dir.z).magnitude);
                     collision.collider.GetComponent<Rigidbody>().AddForce(dir * ConfigManager.S.Info.FeetForce, ForceMode.Impulse);
                 }
             }

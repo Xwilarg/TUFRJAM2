@@ -67,6 +67,7 @@ namespace Scripts.Dice
                 _rb.isKinematic = false;
                 Vector3 mov = _velocity * ConfigManager.S.Info.FireVelocity;
                 mov.z = Mathf.Abs(_velocity.x + _velocity.y) * ConfigManager.S.Info.FireVelocity;
+                mov += transform.forward * ConfigManager.S.Info.FireVelocity;
                 _rb.AddForce(mov, ForceMode.Impulse);
                 _rb.AddTorque(mov * 10f);
                 _state = ThrowState.THROWN;
