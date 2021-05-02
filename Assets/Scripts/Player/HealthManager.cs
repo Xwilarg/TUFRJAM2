@@ -28,7 +28,7 @@ namespace Scripts.Player
         public bool GainHealth()
         {
             if (_health.Length == 0) return true;
-            if (_healthIndex == -1) return false;
+            if (_healthIndex == 0) return false;
 
             _health[_healthIndex].color = Color.red;
             _healthIndex--;
